@@ -238,10 +238,10 @@ opts.on( "-g", "--get query", String,  "get snippet for from  id or URL"){ |v| O
 opts.on( "-i", "--info id", String,  "display info for snippet"){ |v| OPT[:cmd] = "info"; OPT[:query] = v }
 opts.on( "-d", "--delete id", String, "delete id's snippet from local cache"){ |v| OPT[:cmd] = "delete"; OPT[:id] = v }
 opts.on( "-l", "--list","list entries."){ OPT[:cmd] = "list" }
-opts.on( "--lang lang", String, "show only specified lang for list."){ |OPT[:lang]| }
-opts.on( "-t", "--target [mine|all]","target for remote list[mine|all]."){ |OPT[:target]| }
+opts.on( "--lang lang", String, "show only specified lang for list."){ |v| OPT[:lang] = v }
+opts.on( "-t", "--target [mine|all]","target for remote list[mine|all]."){ |v| OPT[:target] = v }
 opts.on( "--langlist","list supported language list"){ OPT[:cmd] = "langlist" }
-opts.on( "--nocache", "don't use local cache"){ |OPT[:nocache]| }
+opts.on( "--nocache", "don't use local cache"){ |v| OPT[:nocache] = v }
 
 begin
   opts.parse!
@@ -264,7 +264,7 @@ begin
     puts snipplr.list
   #when "list_remote":
     #puts snipplr.list_remote
-  when "langlist":
+  when "langlist"
     puts snipplr.langlist
   else
     puts opts.help

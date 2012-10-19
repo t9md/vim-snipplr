@@ -24,10 +24,10 @@ You can exclusively set path for snipplr.rb in `.vimrc`
 
     let g:snipplr_rb = '$HOME/.vim/bundle/snipplr/bin/snipplr.rb'
 
-Command
+Commands
 ----------
 
-snipplr.rb save snippets once get as `~/.snipplr/db.yml.`
+snipplr.rb saves snippets once they are retrieved as `~/.snipplr/db.yml.`
 You can avoid cache with exlamation(!) version command.
 
 ### SnipplrGet
@@ -37,6 +37,8 @@ In opend snippet buffer you can use 'i' to view informatin about that snippet.
     :SnipplrGet http://snipplr.com/view/1234/sample
 
 ### SnipplrList
+As mentioned earlier, keep in mind: this is a list of the snippets which have been
+retrieved before. So this is *not* the list of all your snippets at snipplr (also known as the remote list), instead it lists only the (local) ones which you have fetched using the `SnipplrGet` command!
 
     :SnipplrList
     :SnipplrList!
