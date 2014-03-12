@@ -168,7 +168,7 @@ endfunction
 
 function! s:SnipplrInfoFromList(line)
   let snippet_id = split(a:line, " ")[0]
-  call SnipplrInfo(snippet_id)
+  call s:SnipplrInfo(snippet_id)
 endfunction
 
 function! s:SnipplrDeleteFromList(line)
